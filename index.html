@@ -71,8 +71,6 @@
     }
     .home-content {
         max-width: 600px;
-        display: flex;
-        flex-wrap:wrap;
 
     }
     .home-content h1 {
@@ -124,8 +122,9 @@
     background: #081b29;
     animation: showRight 1s ease forwards;
     animation-delay: 1.6s;
-}
-    .home-content .btn-box {
+ }
+  .home-content .btn-box {
+        content: '';
         display: flex;
         justify-content: space-between;
         width: 345;
@@ -256,18 +255,16 @@
         opacity: .8;
     }
     .home-imghover .home-img{
-            width: 32vw;
-            height: 32vw;
+            width: 30vw;
+            height: 30vw;
             border-radius: 50%;
 
         }
         .home-imghover .home-img .img-item {
             position: relative;
-            width: 100%;
-            height: 100%;
+            width: 85%;
+            height: 90%;
             border-radius: 50%;
-            display: flex;
-            flex-wrap:wrap;
             justify-content: center;
             overflow: hidden;
 
@@ -323,24 +320,24 @@
             font-weight: 600;
         }
 
-        #portfolio .portfolio-container {
+        #project .project-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
-        #portfolio .portfolio-item {
+        #project .project-item {
             background-color: #121212;
             padding: 20px;
             border-radius: 5px;
         }
 
-        #portfolio .portfolio-item h3 {
+        #project .project-item h3 {
             font-size: 20px;
             margin-bottom: 10px;
         }
 
-        #portfolio .portfolio-item a {
+        #project .project-item a {
             color: #00abf0;
             text-decoration: none;
         }
@@ -393,23 +390,6 @@
             line-height: 1.4;
         }
 
-        #work article {
-            border: 1px solid #333;
-            padding: 15px;
-            margin-bottom: 20px; 
-            border-radius: 5px; 
-        }
-
-        #work h3 {
-            font-size: 20px;
-            color: #00abf0; 
-            margin-bottom: 5px;
-        }
-
-        #work p {
-            font-size: 15px;
-            color: #eee; 
-        }
         p ul {
             list-style-type: disc;
             margin-left: 20px;
@@ -428,7 +408,7 @@
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">Yusuf</a>
+        <a href="https://portifolio-921q.onrender.com/" class="logo">Yusuf</a>
         <nav class="navbar">
             <a href="#">Home</a>
             <a href="#about">About</a>
@@ -459,7 +439,7 @@
         <div class="home-imghover">
             <div class="home-img">
                 <div class="img-item">
-                   <img src="https://avatars.githubusercontent.com/u/187448799?" width="70%"  height="100%">
+                   <img src="https://avatars.githubusercontent.com/u/187448799?">
                 </div>
             </div>
     </section>
@@ -495,10 +475,10 @@
 
         </div>
     </section>
-       <section id="portfolio">
+       <section id="project">
         <h2>Projects</h2>
-        <div class="portfolio-container">
-            <div class="portfolio-item">
+        <div class="project-container">
+            <div class="project-item">
                 <h3>Student Grading System</h3>
                 <p><ul>
                     <li>Developed a student grading system using Python and Django</li>
@@ -510,7 +490,7 @@
                 </ul></p>
                 <a href="#">View Project</a>
             </div>
-            <div class="portfolio-item">
+            <div class="project-item">
                 <h3>Umma Blogs</h3>
                 <p><ul>
                     <li>Developed a blog website for sharing articles and stories</li>
@@ -522,7 +502,7 @@
                 </ul></p>
                 <a href="#">View Project</a>
             </div>
-            <div class="portfolio-item">
+            <div class="project-item">
                 <h3>Weather App</h3>
                 <p><ul>
                     <li>Developed a weather application using React and OpenWeather API</li>
@@ -536,17 +516,20 @@
         </div>
     </section>
     <footer>
-        <p>I'm always eager to connect and discuss new opportunities!</p>
-        <p>Email:ym47484988@gmail.com</p>
-        <p>Let's Connect!</p>
-        <div>
+        <section id="contact">
+         <div class="contact">
+          <p>I'm always eager to connect and discuss new opportunities!</p>
+          <p>Let's Connect!</p>
+          <div class="social-links">
             <a href="mailto:ym47484988@gmail.com?subject=Portfolio Inquiry&body=Hello Yusuf," title="Send me an email"><i class='bx bx-envelope'></i></a>
             <a href="https://www.linkedin.com/in/yusuf-mohammed-5272572b6?"><i class='bx bxl-linkedin'></i></a>
             <a href="https://www.instagram.com/loose_them7488/"><i class='bx bxl-instagram'></i></a>
             <a href="https://web.facebook.com/YusufMohammedHebo/"><i class='bx bxl-facebook'></i></a>
             <a href="https://t.me/Y_4life"><i class='bx bxl-telegram'></i></a>
+          </div>
+          <p>&copy; 2025 Yusuf Mohammed. All rights reserved.</p>
         </div>
-        <p>&copy; 2023 Yusuf Mohammed. All rights reserved.</p>
+        </section>
     </footer>
 </body>
 </html>
