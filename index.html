@@ -5,375 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
     <title>Yusuf Mohammed | Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            background: #081b29;
-            color: #ededed;
-            overflow-x: hidden;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 10%;
-            background: #081b29;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 171, 240, 0.1);
-        }
-        
-        .logo {
-            font-size: 25px;
-            color: #ededed;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        #check { display: none; }
-
-        .menu-btn {
-            display: none;
-            cursor: pointer;
-            font-size: 28px;
-            color: #ededed;
-        }
-
-        .navbar a {
-            font-size: 18px;
-            color: #ededed;
-            text-decoration: none;
-            font-weight: 500;
-            margin-left: 35px;
-            transition: .3s;
-        }
-
-        .navbar a:hover {
-            color: #00abf0;
-        }
-
-        section {
-            padding: 100px 10% 60px;
-        }
-
-        .home {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        .home-content {
-            max-width: 800px;
-        }
-        
-        .home-content h1 {
-            font-size: 52px;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        
-        .home-content h3 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #00abf0;
-            margin-bottom: 15px;
-        }
-        
-        .home-content p {
-            font-size: 16px;
-            margin-bottom: 40px;
-            line-height: 1.8;
-            color: #cbd5e1;
-        }
-        
-        .btn-box {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .btn-box a {
-            display: inline-flex;
-            width: 150px;
-            height: 48px;
-            justify-content: center;
-            align-items: center;
-            background: #00abf0;
-            border: 2px solid #00abf0;
-            border-radius: 8px;
-            font-size: 18px;
-            color: #081b29;
-            text-decoration: none;
-            font-weight: 600;
-            transition: .5s;
-        }
-
-        .btn-box a:nth-child(2) {
-            background: transparent;
-            color: #00abf0;
-        }
-
-        .btn-box a:hover {
-            background: transparent;
-            color: #00abf0;
-        }
-
-        .btn-box a:nth-child(2):hover {
-            background: #00abf0;
-            color: #081b29;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 50px;
-        }
-
-        .text-blue { color: #00abf0; }
-
-        .about-content {
-            max-width: 850px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-            font-size: 16px;
-        }
-
-        .education-card {
-            background: #112e42;
-            padding: 30px;
-            border-radius: 12px;
-            max-width: 800px;
-            margin: 0 auto;
-            border-left: 5px solid #00abf0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .education-card h3 {
-            color: #00abf0;
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-
-        .education-card span {
-            display: block;
-            margin-bottom: 15px;
-            font-size: 14px;
-            color: #aaa;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .skill {
-            border: 1px solid #00abf0;
-            color: #00abf0;
-            padding: 8px 18px;
-            border-radius: 5px;
-            font-weight: 500;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .project-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .project-card {
-            background: #112e42;
-            padding: 20px;
-            border-radius: 15px;
-            border: 1.5px solid rgba(0, 171, 240, 0.1);
-            display: flex;
-            flex-direction: column;
-            transition: 0.4s;
-        }
-
-        .project-card:hover {
-            border-color: #00abf0;
-            transform: translateY(-5px);
-        }
-
-        .project-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            background: #0d283d;
-        }
-
-        .tagline {
-            font-size: 10px;
-            color: #00abf0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .project-description {
-            font-size: 14px;
-            color: #cbd5e1;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 20px;
-        }
-
-        .pill {
-            background: rgba(0, 171, 240, 0.1);
-            border: 1px solid rgba(0, 171, 240, 0.3);
-            color: #00abf0;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 10px;
-        }
-
-        .card-links {
-            display: flex;
-            gap: 10px;
-            margin-top: auto;
-        }
-
-        .card-links a {
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
-
-        .card-links a:first-child {
-            background: #fff;
-            color: #081b29;
-        }
-
-        .card-links .view-link {
-            background: #00abf0;
-            color: #081b29;
-        }
-
-        .github-footer {
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
-        }
-
-        .btn-github {
-            padding: 12px 25px;
-            background: #00abf0;
-            color: #081b29;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 30px;
-            border: 2px solid #00abf0;
-            transition: 0.3s;
-        }
-
-        .btn-github:hover {
-            background: transparent;
-            color: #00abf0;
-        }
-
-        footer {
-            background: #112e42;
-            padding: 40px 10% 20px;
-            text-align: center;
-        }
-
-        .social-links {
-            margin-bottom: 20px;
-        }
-
-        .social-links a {
-            font-size: 24px;
-            color: #00abf0;
-            margin: 0 10px;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #fff;
-        }
-
-        @media (max-width: 768px) {
-            .menu-btn { display: block; }
-
-            .navbar {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100vh;
-                background: #081b29;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: 0.5s ease;
-            }
-
-            #check:checked ~ .navbar { left: 0; }
-
-            .navbar a {
-                margin: 20px 0;
-                font-size: 24px;
-                margin-left: 0;
-            }
-
-            .home {
-                padding-top: 150px;
-                height: auto;
-                text-align: left;
-            }
-
-            .home-content h1 { font-size: 34px; }
-            .home-content h3 { font-size: 22px; }
-            .btn-box { flex-direction: column; }
-            .btn-box a { width: 100%; }
-            
-            section { padding: 80px 5% 40px; }
-        }
-    </style>
 </head>
 <body>
 
     <header class="header">
-        <a href="./IMG_20251228_001745_237.jpg" class="logo">Yusuf</a>
+        <a href="https://yusuf-mohammed.vercel.app/" class="logo">Yusuf<span>Dev</span></a>
         <input type="checkbox" id="check">
         <label for="check" class="menu-btn"><i class='bx bx-menu'></i></label>
         <nav class="navbar">
-            <a href="#">Home</a>
+            <a href="#" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#education">Education</a>
             <a href="#skills">Skills</a>
@@ -384,21 +26,31 @@
 
     <section class="home">
         <div class="home-content">
-            <h1>Hi, I'm Yusuf Mohammed</h1>
-            <h3>Full Stack Web Developer</h3>
-            <p>I’m a passionate Full Stack Developer, Competitive Programmer, and Data Analyst who loves turning ideas into smart, scalable solutions. I thrive in dynamic, team-driven environments to build innovative solutions that make a real impact.</p>
+            <h1>Hi, I'm <span style="color: #38bdf8;">Yusuf Mohammed</span></h1>
+            <h3>Full Stack Web Developer | Competitive Programmer | Data Analyst | Telegram Bot Developers</h3>
+            <p>Building scalable web applications and intelligent automation tools.
+Transforming ideas into reliable and impactful digital solutions.
+Developing Telegram bots and management systems for real-world use.
+Applying data analysis and algorithmic thinking to solve complex problems.
+Continuously learning, collaborating, and creating technology that makes a difference</p>
             <div class="btn-box">
-                <a href="mailto:ym47484988@gmail.com">Hire Me</a>
-                <a href="https://t.me/Y_4life">Let's Talk</a>
+                <a href="#project">🚀 View My Projects</a>
+                <a href="https://t.me/Y_4life">🤝 Let's Collaborate</a>
+                <a href="#">📄 Download Resume</a>
             </div>
+        </div>
+        <div class="home-img">
+            <img src="Yusuf.jpg" alt="Yusuf Mohammed">
         </div>
     </section>
 
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
-            <p>I am a <span class="text-blue">Computer Science & Engineering student</span> at ASTU. I enjoy working with professionals, project managers, and fellow developers to build innovative solutions that make a real impact.</p>
-            <p>My expertise spans from building dynamic interfaces with <span class="text-blue">React and Next.js</span> to engineering robust backends with <span class="text-blue">Python and Django</span>.</p>
+            <p>I am a Computer Science and Engineering student passionate about building impactful technology solutions. I have more than two years of experience developing scalable web applications and management systems, along with over one year of experience building Telegram bots for real-world use.</p>
+            <p>My interests also extend to data analysis, where I have more than three years of experience turning raw data into insights that support better decision-making. In addition, I have two years of competitive programming experience, which has strengthened my logical thinking and algorithmic problem-solving.</p>
+            <p>Beyond technical development, I bring over four years of leadership experience through organizations, clubs, and community initiatives where I served as a President, Vice President, and active contributor. These roles helped me build strong communication, mentoring, and collaboration skills.</p>
+            <p>I am a self-motivated developer and continuous learner who enjoys exploring new technologies and solving challenging problems. I am always open to collaborating on innovative projects that create meaningful impact.</p>
         </div>
     </section>
 
@@ -406,22 +58,180 @@
         <h2 class="section-title">Education</h2>
         <div class="education-card">
             <h3>Adama Science and Technology University (ASTU)</h3>
-            <span>B.Sc. in Computer Science & Engineering | Expected 2028</span>
-            <p>Focusing on high-level software engineering, data structures, and algorithmic efficiency.</p>
+            <div class="edu-badge">
+                <i class='bx bxs-graduation'></i>
+                <span>Current Study: B.Sc. in Computer Science & Engineering</span>
+            </div>
+            <div class="edu-details">
+                <div class="edu-item">
+                    <i class='bx bxs-school'></i>
+                    <span>University: Adama Science and Technology University</span>
+                </div>
+                <div class="edu-item">
+                    <i class='bx bxs-calendar-star'></i>
+                    <span>Joined: 2024</span>
+                </div>
+                <div class="edu-item">
+                    <i class='bx bxs-calendar-check'></i>
+                    <span>Expected Graduation: 2028</span>
+                </div>
+            </div>
+            <p>Focused on software engineering, data structures, algorithms, and building practical real-world systems.</p>
         </div>
     </section>
 
     <section id="skills">
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills-container">
-            <div class="skill">Python & Django</div>
-            <div class="skill">C++</div>
-            <div class="skill">React & Next.js</div>
-            <div class="skill">TypeScript</div>
-            <div class="skill">Data Analysis</div>
-            <div class="skill">SQL (MySQL/SQLite)</div>
-            <div class="skill">HTML5 & CSS3</div>
-            <div class="skill">Git & GitHub</div>
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <span class="skill-category-label">Frontend</span>
+                    <p>Interfaces, interaction, and responsive web experiences.</p>
+                </div>
+                <div class="skill-grid">
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                        <span>TypeScript</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                        <span>React</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <span class="skill-category-label">Backend</span>
+                    <p>Application logic, APIs, and server-side problem solving.</p>
+                </div>
+                <div class="skill-grid">
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                        <span>Python</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django">
+                        <span>Django</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                        <span>Java</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                        <span>C++</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <span class="skill-category-label">Database</span>
+                    <p>Structured data storage, querying, and persistence.</p>
+                </div>
+                <div class="skill-grid">
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                        <span>MySQL</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                        <span>PostgreSQL</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">
+                        <span>SQLite</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <span class="skill-category-label">Data Analysis</span>
+                    <p>Data preparation, reporting, and insight generation tools.</p>
+                </div>
+                <div class="skill-grid">
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python for Data Analysis">
+                        <span>Python</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Microsoft Excel">
+                        <span>Microsoft Excel</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.simpleicons.org/tableau/E97627" alt="Tableau">
+                        <span>Tableau</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Python Pandas">
+                        <span>Python Pandas</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <span class="skill-category-label">Frameworks & Libraries</span>
+                    <p>Modern UI systems and development frameworks.</p>
+                </div>
+                <div class="skill-grid">
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js">
+                        <span>Next.js</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                        <span>Bootstrap</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS">
+                        <span>Tailwind CSS</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.simpleicons.org/shadcnui/ffffff" alt="Shadcn UI">
+                        <span>Shadcn UI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <span class="skill-category-label">Tools</span>
+                    <p>Version control and collaborative development workflow.</p>
+                </div>
+                <div class="skill-grid">
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                        <span>Git</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub">
+                        <span>GitHub</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+                        <span>VS Code</span>
+                    </div>
+                    <div class="skill">
+                        <img class="skill-icon" src="https://cdn.simpleicons.org/googlechrome/4285F4" alt="React Developer Tools">
+                        <span>React Developer Tools</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -429,7 +239,7 @@
         <h2 class="section-title">🚀 Featured Projects</h2>
         <div class="project-container">
             <div class="project-card">
-                <img src="shopping.jpg" alt="Shopping Cart" class="project-img">
+                <img src="https://yusuf-mohammed.vercel.app/_next/image?url=%2Fprojects%2FShopping.png&w=1080&q=75" alt="Shopping Cart" class="project-img">
                 <div>
                     <span class="tagline">TypeScript • React • Vite</span>
                     <h3>Shopping Cart</h3>
@@ -444,7 +254,7 @@
             </div>
 
             <div class="project-card">
-                <img src="blog.jpg" alt="Umma Blog" class="project-img">
+                <img src="https://yusuf-mohammed.vercel.app/_next/image?url=%2Fprojects%2FUmmaBlogs.png&w=1080&q=75" alt="Umma Blog" class="project-img">
                 <div>
                     <span class="tagline">Python • Django • SQLite3</span>
                     <h3>Umma Blog App</h3>
@@ -459,7 +269,7 @@
             </div>
 
             <div class="project-card">
-                <img src="bot.jpg" alt="Telegram Bot" class="project-img">
+                <img src="https://yusuf-mohammed.vercel.app/_next/image?url=%2Fprojects%2FE-Books.png&w=1080&q=75" alt="Telegram Bot" class="project-img">
                 <div>
                     <span class="tagline">Python • Telegram API</span>
                     <h3>E-Books Telegram Bot</h3>
@@ -472,6 +282,49 @@
                     <a href="#">GitHub</a> <a href="#" class="view-link">Live Demo</a>
                 </div>
             </div>
+
+            <div class="project-card">
+                <img src="https://yusuf-mohammed.vercel.app/_next/image?url=%2Fprojects%2FNaniFood.png&w=1080&q=75" alt="Nani Food Delivery" class="project-img">
+                <div>
+                    <span class="tagline">HTML • CSS • JavaScript</span>
+                    <h3>Nani Food Delivery</h3>
+                    <p class="project-description">Frontend e-commerce food app built with HTML, CSS, and JavaScript.</p>
+                    <div class="tag-container">
+                        <span class="pill">HTML</span> <span class="pill">CSS</span> <span class="pill">JavaScript</span>
+                    </div>
+                </div>
+                <div class="card-links">
+                    <a href="#">GitHub</a> <a href="#" class="view-link">Live Demo</a>
+                </div>
+            </div>
+             <div class="project-card">
+                <img src="https://yusuf-mohammed.vercel.app/_next/image?url=%2Fprojects%2FPersonalLabirarys.png&w=1080&q=75" alt="Nani Food Delivery" class="project-img">
+                <div>
+                    <span class="tagline">React • TypeScript • Tailwind CSS</span>
+                    <h3>Personal Library Management System</h3>
+                    <p class="project-description">A React + TypeScript app for managing book collections with search, category, and progress tracking features.</p>
+                    <div class="tag-container">
+                        <span class="pill">React</span> <span class="pill">TypeScript</span> <span class="pill">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="card-links">
+                    <a href="#">GitHub</a> <a href="#" class="view-link">Live Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="personals portifolios.png" alt="Personal Portfolio" class="project-img">
+                <div>
+                    <span class="tagline">React • TypeScript • Tailwind CSS • Shadcn UI • Vite</span>
+                    <h3>Personal Portfolio</h3>
+                    <p class="project-description">A personal portfolio built with React and Vite, styled using Tailwind CSS and Shadcn UI, with TypeScript for scalable and maintainable development.</p>
+                    <div class="tag-container">
+                        <span class="pill">React</span> <span class="pill">TypeScript</span> <span class="pill">Tailwind CSS</span> <span class="pill">Shadcn UI</span> <span class="pill">Vite</span>
+                    </div>
+                </div>
+                <div class="card-links">
+                    <a href="#">GitHub</a> <a href="https://yusuf-mohammed.vercel.app/" class="view-link">Live Demo</a>
+                </div>
+            </div>
         </div>
 
         <div class="github-footer">
@@ -479,13 +332,52 @@
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="social-links">
-            <a href="mailto:ym47484988@gmail.com"><i class='bx bx-envelope'></i></a>
-            <a href="https://www.linkedin.com/in/yusuf-mohammed-5272572b6?"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://t.me/Y_4life"><i class='bx bxl-telegram'></i></a>
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+            <a class="contact-card" href="mailto:ym47484988@gmail.com">
+                <i class='bx bx-envelope'></i>
+                <h3>Email</h3>
+            </a>
+            <a class="contact-card" href="https://t.me/Y_4life">
+                <i class='bx bxl-telegram'></i>
+                <h3>Telegram</h3>
+            </a>
+            <a class="contact-card" href="https://www.linkedin.com/in/yusuf-mohammed-5272572b6?">
+                <i class='bx bxl-linkedin'></i>
+                <h3>LinkedIn</h3>
+            </a>
+            <a class="contact-card" href="https://www.instagram.com/kebilad_7488/">
+                <i class='bx bxl-instagram'></i>
+                <h3>Instagram</h3>
+            </a>
+            <a class="contact-card" href="https://x.com/HeboYusuf">
+                <i class='bx bxl-x'></i>
+                <h3>Twitter</h3>
+            </a>
+            <a class="contact-card" href="https://web.facebook.com/YusufMohammedHebo">
+                <i class='bx bxl-facebook'></i>
+                <h3>Facebook</h3>
+            </a>
+            <a class="contact-card" href="tel:+251928892344">
+                <i class='bx bx-phone-call'></i>
+                <h3>Phone</h3>
+                <p>+251 92 889 2344</p>
+            </a>
         </div>
-        <p>&copy; 2026 Yusuf Mohammed | Full Stack Developer</p>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/YusufMohammedHebo" class="social-btn facebook" aria-label="Facebook"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="https://t.me/Y_4life" class="social-btn telegram" aria-label="Telegram"><i class='bx bxl-telegram'></i></a>
+            <a href="https://x.com/HeboYusuf" class="social-btn x" aria-label="X.com"><i class='bx bx-x'></i></a>
+            <a href="https://www.instagram.com/kebilad_7488/" class="social-btn instagram" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.linkedin.com/in/yusuf-mohammed-5272572b6?" class="social-btn linkedin" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="https://github.com/Yusuf7298" class="social-btn github" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            <a href="tel:+251928892344" class="social-btn phone" aria-label="Phone"><i class='bx bxs-phone'></i></a>
+        </div>
+        <p>&copy; 2026 Yusuf Mohammed | Full Stack Web Developer | Competitive Programmer | Data Analyst | Telegram Bot Developers —  All Rights Reserved.</p>
     </footer>
 
 </body>
