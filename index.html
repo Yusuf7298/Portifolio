@@ -31,7 +31,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 100;
+            z-index: 1000;
             border-bottom: 1px solid rgba(0, 171, 240, 0.1);
         }
         
@@ -64,11 +64,14 @@
             color: #00abf0;
         }
 
+        section {
+            padding: 100px 10% 60px;
+        }
+
         .home {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 0 10%;
         }
         
         .home-content {
@@ -76,13 +79,13 @@
         }
         
         .home-content h1 {
-            font-size: 56px;
+            font-size: 52px;
             font-weight: 700;
             line-height: 1.2;
         }
         
         .home-content h3 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             color: #00abf0;
             margin-bottom: 15px;
@@ -131,13 +134,9 @@
             color: #081b29;
         }
 
-        section {
-            padding: 100px 10%;
-        }
-
         .section-title {
             text-align: center;
-            font-size: 36px;
+            font-size: 32px;
             margin-bottom: 50px;
         }
 
@@ -152,7 +151,7 @@
         .about-content p {
             margin-bottom: 20px;
             line-height: 1.8;
-            font-size: 17px;
+            font-size: 16px;
         }
 
         .education-card {
@@ -162,11 +161,13 @@
             max-width: 800px;
             margin: 0 auto;
             border-left: 5px solid #00abf0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .education-card h3 {
             color: #00abf0;
             margin-bottom: 5px;
+            font-size: 18px;
         }
 
         .education-card span {
@@ -180,21 +181,19 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .skill {
             border: 1px solid #00abf0;
             color: #00abf0;
-            padding: 10px 20px;
+            padding: 8px 18px;
             border-radius: 5px;
             font-weight: 500;
+            font-size: 14px;
             transition: 0.3s;
-        }
-
-        .skill:hover {
-            background: #00abf0;
-            color: #081b29;
         }
 
         .project-container {
@@ -205,28 +204,30 @@
 
         .project-card {
             background: #112e42;
-            padding: 25px;
+            padding: 20px;
             border-radius: 15px;
-            border: 1.5px solid rgba(0, 171, 240, 0.2);
+            border: 1.5px solid rgba(0, 171, 240, 0.1);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             transition: 0.4s;
         }
 
         .project-card:hover {
             border-color: #00abf0;
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
 
-        .project-card h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #fff;
+        .project-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background: #0d283d;
         }
 
         .tagline {
-            font-size: 11px;
+            font-size: 10px;
             color: #00abf0;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -244,7 +245,7 @@
         .tag-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
             margin-bottom: 20px;
         }
 
@@ -254,20 +255,20 @@
             color: #00abf0;
             padding: 4px 10px;
             border-radius: 20px;
-            font-size: 11px;
-            font-weight: 500;
+            font-size: 10px;
         }
 
         .card-links {
             display: flex;
             gap: 10px;
+            margin-top: auto;
         }
 
         .card-links a {
             text-decoration: none;
             font-size: 13px;
             font-weight: 600;
-            padding: 6px 15px;
+            padding: 8px 16px;
             border-radius: 4px;
             transition: 0.3s;
         }
@@ -282,25 +283,21 @@
             color: #081b29;
         }
 
-        .card-links a:hover {
-            opacity: 0.8;
-        }
-
         .github-footer {
             display: flex;
             justify-content: center;
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
         .btn-github {
-            padding: 12px 28px;
+            padding: 12px 25px;
             background: #00abf0;
             color: #081b29;
             text-decoration: none;
             font-weight: 600;
             border-radius: 30px;
-            transition: 0.3s ease;
             border: 2px solid #00abf0;
+            transition: 0.3s;
         }
 
         .btn-github:hover {
@@ -310,47 +307,62 @@
 
         footer {
             background: #112e42;
-            padding: 50px 10% 20px;
+            padding: 40px 10% 20px;
             text-align: center;
         }
 
         .social-links {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+            margin-bottom: 20px;
         }
 
         .social-links a {
             font-size: 24px;
             color: #00abf0;
+            margin: 0 10px;
             transition: 0.3s;
         }
 
         .social-links a:hover {
-            transform: scale(1.2);
+            color: #fff;
         }
 
         @media (max-width: 768px) {
             .menu-btn { display: block; }
+
             .navbar {
                 position: fixed;
-                top: 70px;
+                top: 0;
                 left: -100%;
                 width: 100%;
                 height: 100vh;
                 background: #081b29;
+                display: flex;
                 flex-direction: column;
+                justify-content: center;
                 align-items: center;
-                padding-top: 50px;
-                transition: 0.4s;
+                transition: 0.5s ease;
             }
-            .navbar a { margin: 20px 0; font-size: 22px; }
+
             #check:checked ~ .navbar { left: 0; }
-            .home { flex-direction: column; text-align: center; justify-content: center; }
-            .home-content h1 { font-size: 38px; }
-            .home-content h3 { font-size: 24px; }
-            .btn-box { justify-content: center; }
+
+            .navbar a {
+                margin: 20px 0;
+                font-size: 24px;
+                margin-left: 0;
+            }
+
+            .home {
+                padding-top: 150px;
+                height: auto;
+                text-align: left;
+            }
+
+            .home-content h1 { font-size: 34px; }
+            .home-content h3 { font-size: 22px; }
+            .btn-box { flex-direction: column; }
+            .btn-box a { width: 100%; }
+            
+            section { padding: 80px 5% 40px; }
         }
     </style>
 </head>
@@ -374,7 +386,7 @@
         <div class="home-content">
             <h1>Hi, I'm Yusuf Mohammed</h1>
             <h3>Full Stack Web Developer</h3>
-            <p>I’m a passionate Full Stack Developer, Competitive Programmer, and Data Analyst who loves turning ideas into smart, scalable solutions. I’m an active learner, effective communicator, and a collaborative problem solver who thrives in dynamic, team-driven environments.</p>
+            <p>I’m a passionate Full Stack Developer, Competitive Programmer, and Data Analyst who loves turning ideas into smart, scalable solutions. I thrive in dynamic, team-driven environments to build innovative solutions that make a real impact.</p>
             <div class="btn-box">
                 <a href="mailto:ym47484988@gmail.com">Hire Me</a>
                 <a href="https://t.me/Y_4life">Let's Talk</a>
@@ -385,12 +397,8 @@
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
-            <p>
-                I am a <span class="text-blue">Computer Science & Engineering student</span> at ASTU. I enjoy working with professionals, project managers, and fellow developers to build innovative solutions that make a real impact.
-            </p>
-            <p>
-                My expertise spans from building dynamic interfaces with <span class="text-blue">React and Next.js</span> to engineering robust backends with <span class="text-blue">Python and Django</span>. My goal is to create technology that is both functional and intelligent.
-            </p>
+            <p>I am a <span class="text-blue">Computer Science & Engineering student</span> at ASTU. I enjoy working with professionals, project managers, and fellow developers to build innovative solutions that make a real impact.</p>
+            <p>My expertise spans from building dynamic interfaces with <span class="text-blue">React and Next.js</span> to engineering robust backends with <span class="text-blue">Python and Django</span>.</p>
         </div>
     </section>
 
@@ -421,10 +429,11 @@
         <h2 class="section-title">🚀 Featured Projects</h2>
         <div class="project-container">
             <div class="project-card">
+                <img src="shopping.jpg" alt="Shopping Cart" class="project-img">
                 <div>
                     <span class="tagline">TypeScript • React • Vite</span>
                     <h3>Shopping Cart</h3>
-                    <p class="project-description">A React-based web app for browsing products, adding to cart, and managing selections. Includes responsive navbars.</p>
+                    <p class="project-description">A React-based web app for browsing products and managing selections with responsive navbars.</p>
                     <div class="tag-container">
                         <span class="pill">React</span> <span class="pill">CSS</span> <span class="pill">TypeScript</span>
                     </div>
@@ -435,10 +444,11 @@
             </div>
 
             <div class="project-card">
+                <img src="blog.jpg" alt="Umma Blog" class="project-img">
                 <div>
                     <span class="tagline">Python • Django • SQLite3</span>
                     <h3>Umma Blog App</h3>
-                    <p class="project-description">A Django-based blog platform with CRUD operations and user authentication. Supports text, image, and video posts.</p>
+                    <p class="project-description">A Django-based blog platform with CRUD operations and user authentication.</p>
                     <div class="tag-container">
                         <span class="pill">Django</span> <span class="pill">SQLite3</span> <span class="pill">Bootstrap</span>
                     </div>
@@ -449,54 +459,13 @@
             </div>
 
             <div class="project-card">
+                <img src="bot.jpg" alt="Telegram Bot" class="project-img">
                 <div>
                     <span class="tagline">Python • Telegram API</span>
                     <h3>E-Books Telegram Bot</h3>
-                    <p class="project-description">A Telegram bot offering Ethiopian student textbooks and teacher guides. Users can search by grade and stream.</p>
+                    <p class="project-description">A Telegram bot offering Ethiopian textbooks. Users can search by grade and stream.</p>
                     <div class="tag-container">
-                        <span class="pill">Python-Telegram-Bot</span>
-                    </div>
-                </div>
-                <div class="card-links">
-                    <a href="#">GitHub</a> <a href="#" class="view-link">Live Demo</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div>
-                    <span class="tagline">JS • HTML • CSS</span>
-                    <h3>Nani Food Delivery</h3>
-                    <p class="project-description">Frontend e-commerce food app built with HTML, CSS, and JavaScript featuring an appetizing interface.</p>
-                    <div class="tag-container">
-                        <span class="pill">HTML</span> <span class="pill">CSS</span> <span class="pill">JavaScript</span>
-                    </div>
-                </div>
-                <div class="card-links">
-                    <a href="#">GitHub</a> <a href="#" class="view-link">Live Demo</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div>
-                    <span class="tagline">TypeScript • Next.js</span>
-                    <h3>Modern Blog</h3>
-                    <p class="project-description">A modern blog app built with Next.js and Tailwind CSS featuring a responsive layout and dynamic rendering.</p>
-                    <div class="tag-container">
-                        <span class="pill">Next.js</span> <span class="pill">Tailwind CSS</span>
-                    </div>
-                </div>
-                <div class="card-links">
-                    <a href="#">GitHub</a> <a href="#" class="view-link">Live Demo</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div>
-                    <span class="tagline">React • TypeScript</span>
-                    <h3>Library Management</h3>
-                    <p class="project-description">A React + TypeScript app for managing book collections with search, category, and progress tracking.</p>
-                    <div class="tag-container">
-                        <span class="pill">React</span> <span class="pill">Tailwind</span> <span class="pill">Shadcn</span>
+                        <span class="pill">Python</span> <span class="pill">API</span>
                     </div>
                 </div>
                 <div class="card-links">
@@ -520,4 +489,4 @@
     </footer>
 
 </body>
-    </html>
+</html>
